@@ -154,8 +154,6 @@ class ViewController: UIViewController {
             {
                 print("Videos actualizados")
                 
-                //:D
-                
                 print(results.count)
                 
                 
