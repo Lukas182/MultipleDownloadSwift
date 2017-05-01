@@ -17,7 +17,8 @@ class ViewController: UIViewController {
     var player : AVPlayer?
     
     var DatosCars = [CarData]()
-    let queue1:DispatchQueue = DispatchQueue(label: "com.david.queue1")
+
+    let queue1:DispatchQueue = DispatchQueue(label: "com.david.queue1", qos: .background)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +45,7 @@ class ViewController: UIViewController {
                 
                 ca.setValue("AudiTT", forKey: "nombre")
                 ca.setValue(1, forKey: "id")
-                ca.setValue(2, forKey: "nvideos")
+                ca.setValue(3, forKey: "nvideos")
                 
                 do
                 {
@@ -138,11 +139,15 @@ class ViewController: UIViewController {
                 
                 nVideosADescargar = nVideosADescargar - 1
                 
+                // Buscaremos los videos que no estan actualizados y crearemos un array con las urls de los videos
+                
                 var urlArray : [String] = [String]()
                 
                 urlArray.append("http://www.html5videoplayer.net/videos/toystory.mp4")
                 urlArray.append("https://www.quirksmode.org/html5/videos/big_buck_bunny.mp4")
                 urlArray.append("http://techslides.com/demos/sample-videos/small.mp4")
+                
+                // Ejecutamos el almacenamiento en otro thread
                 
                 self.queue1.sync
                 {
@@ -156,7 +161,9 @@ class ViewController: UIViewController {
                 
                 print(results.count)
                 
+                // TEST PLAY VIDEO .-
                 
+                /*
                 let path = (results[2] as AnyObject).value(forKey: "video_path") as? String
                 
                 let fm = FileManager.default
@@ -168,27 +175,8 @@ class ViewController: UIViewController {
                 playerLayer.frame = self.view.bounds
                 self.view.layer.addSublayer(playerLayer)
                 player.play()
-                
-                /*
-                for result in results as! [NSManagedObject]
-                {
-                    
-                    //let path = result.value(forKey: "video_path") as? String
-                    
-                    /*
-                    let fm = FileManager.default
-                    let docsurl = try! fm.url(for:.documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-                    let myurl = docsurl.appendingPathComponent(path!)
-                    
-                    let player = AVPlayer(url: myurl)
-                    let playerLayer = AVPlayerLayer(player: player)
-                    playerLayer.frame = self.view.bounds
-                    self.view.layer.addSublayer(playerLayer)
-                    player.play()
-                     */
-                    
-                }
                 */
+                
                 
             }
         }
