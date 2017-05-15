@@ -6,6 +6,8 @@
 //  Copyright © 2017 David. All rights reserved.
 //
 
+// Funciones de descarga y almacenamiento de ficheros
+
 import UIKit
 import Alamofire
 import CoreData

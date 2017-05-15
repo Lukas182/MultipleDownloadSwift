@@ -46,7 +46,13 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="At2-fV-PFD"/>
+                    <navigationItem key="navigationItem" id="At2-fV-PFD">
+                        <barButtonItem key="rightBarButtonItem" title="Lista" id="3lM-zH-7Oz">
+                            <connections>
+                                <segue destination="jI8-Te-cxs" kind="show" id="wNm-Bt-O1x"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="ViewPlay" destination="T1l-d4-7rf" id="dlQ-EX-9rX"/>
                     </connections>
@@ -54,6 +60,96 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="903.125" y="138.8671875"/>
+        </scene>
+        <!--Lista View Controller-->
+        <scene sceneID="mJ4-2n-1yu">
+            <objects>
+                <tableViewController id="jI8-Te-cxs" customClass="ListaViewController" customModule="DownloadTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="98" sectionHeaderHeight="28" sectionFooterHeight="28" id="TSr-EN-uAJ">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CustomCell" rowHeight="98" id="qai-r9-TCr" customClass="ListaViewCell" customModule="DownloadTest" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="768" height="98"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qai-r9-TCr" id="m9B-iP-ZUR">
+                                    <rect key="frame" x="0.0" y="0.0" width="702" height="97"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPk-1X-Q1v">
+                                            <rect key="frame" x="39" y="31" width="501" height="34"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="NombreCar" destination="OPk-1X-Q1v" id="Rld-no-KcV"/>
+                                    <segue destination="44K-Am-ig6" kind="show" id="QKv-P4-2Mn"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="jI8-Te-cxs" id="ZNK-Mk-ZPN"/>
+                            <outlet property="delegate" destination="jI8-Te-cxs" id="owI-k8-CEQ"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nrJ-0L-Ga8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1593.75" y="-209.1796875"/>
+        </scene>
+        <!--Video Table View Controller-->
+        <scene sceneID="yTB-ZW-WmS">
+            <objects>
+                <tableViewController id="44K-Am-ig6" customClass="VideoTableViewController" customModule="DownloadTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" id="Mf8-eh-D9V">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ListaVideoCell" rowHeight="100" id="657-fL-YhL" customClass="VideoViewCell" customModule="DownloadTest" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="768" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="657-fL-YhL" id="uSt-Pg-OP7">
+                                    <rect key="frame" x="0.0" y="0.0" width="702" height="99"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VideoNombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m44-xk-zzJ">
+                                            <rect key="frame" x="34" y="23" width="380" height="52"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="VideoName" destination="m44-xk-zzJ" id="9Jo-WE-s2z"/>
+                                    <segue destination="8Tn-MK-T8j" kind="show" id="L4Z-8i-AwA"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="44K-Am-ig6" id="t9O-EI-SHA"/>
+                            <outlet property="delegate" destination="44K-Am-ig6" id="cKG-eD-ZwE"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RDC-Wd-EZc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2325" y="-209.1796875"/>
+        </scene>
+        <!--AV Player View Controller-->
+        <scene sceneID="dtj-A1-mBS">
+            <objects>
+                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="8Tn-MK-T8j" customClass="PlayerViewController" customModule="DownloadTest" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eR3-Vo-Qpm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3027" y="-209"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="D3E-35-I96">
@@ -71,7 +167,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N6u-oz-iFy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1628" y="139"/>
+            <point key="canvasLocation" x="1594" y="472"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="u6q-Ws-D4o">

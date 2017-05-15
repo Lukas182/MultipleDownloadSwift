@@ -8,4 +8,8 @@ target 'DownloadTest' do
   # Pods for DownloadTest
   pod 'Alamofire', '~> 4.4'
 
+  # Pods , JSON!
+  pod 'SwiftyJSON'
+  pod 'CryptoSwift'
+
 end

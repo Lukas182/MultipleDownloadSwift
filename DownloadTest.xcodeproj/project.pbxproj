@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		234FBBBBAFFF603F8AF9BA79 /* Pods_DownloadTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBFC391077EFEF59073010B /* Pods_DownloadTest.framework */; };
+		630575511EBDC9D200932F18 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630575501EBDC9D200932F18 /* DataManager.swift */; };
+		632F00A71EC9A81D0080EA91 /* ListaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632F00A61EC9A81D0080EA91 /* ListaViewController.swift */; };
+		632F00A91EC9AA870080EA91 /* ListaViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632F00A81EC9AA870080EA91 /* ListaViewCell.swift */; };
+		632F00AB1EC9ACAE0080EA91 /* VideoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632F00AA1EC9ACAE0080EA91 /* VideoTableViewController.swift */; };
+		632F00AD1EC9B0F60080EA91 /* VideoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632F00AC1EC9B0F60080EA91 /* VideoViewCell.swift */; };
+		632F00AF1EC9B1F90080EA91 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632F00AE1EC9B1F90080EA91 /* PlayerViewController.swift */; };
 		6398A0971EB1EC5B0036A314 /* BannerDownload.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6398A0961EB1EC5B0036A314 /* BannerDownload.xib */; };
 		6398A0991EB1ED440036A314 /* BannerDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6398A0981EB1ED440036A314 /* BannerDownload.swift */; };
 		63BD315B1EAB4EE400D4D2F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BD315A1EAB4EE400D4D2F8 /* AppDelegate.swift */; };
@@ -21,6 +27,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		630575501EBDC9D200932F18 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataManager.swift; path = ../DataManager.swift; sourceTree = "<group>"; };
+		632F00A61EC9A81D0080EA91 /* ListaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListaViewController.swift; sourceTree = "<group>"; };
+		632F00A81EC9AA870080EA91 /* ListaViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListaViewCell.swift; sourceTree = "<group>"; };
+		632F00AA1EC9ACAE0080EA91 /* VideoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTableViewController.swift; sourceTree = "<group>"; };
+		632F00AC1EC9B0F60080EA91 /* VideoViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewCell.swift; sourceTree = "<group>"; };
+		632F00AE1EC9B1F90080EA91 /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		6398A0961EB1EC5B0036A314 /* BannerDownload.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BannerDownload.xib; sourceTree = "<group>"; };
 		6398A0981EB1ED440036A314 /* BannerDownload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerDownload.swift; sourceTree = "<group>"; };
 		63BD31571EAB4EE400D4D2F8 /* DownloadTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DownloadTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,11 +104,17 @@
 				6398A0981EB1ED440036A314 /* BannerDownload.swift */,
 				63BD315A1EAB4EE400D4D2F8 /* AppDelegate.swift */,
 				63BD315C1EAB4EE400D4D2F8 /* ViewController.swift */,
+				632F00A61EC9A81D0080EA91 /* ListaViewController.swift */,
+				632F00A81EC9AA870080EA91 /* ListaViewCell.swift */,
 				63BD315E1EAB4EE400D4D2F8 /* Main.storyboard */,
+				632F00AE1EC9B1F90080EA91 /* PlayerViewController.swift */,
+				632F00AC1EC9B0F60080EA91 /* VideoViewCell.swift */,
+				632F00AA1EC9ACAE0080EA91 /* VideoTableViewController.swift */,
 				63BD31611EAB4EE400D4D2F8 /* Assets.xcassets */,
 				63BD31631EAB4EE400D4D2F8 /* LaunchScreen.storyboard */,
 				63BD31661EAB4EE400D4D2F8 /* Info.plist */,
 				63BD316C1EAB516C00D4D2F8 /* DownloadManager.swift */,
+				630575501EBDC9D200932F18 /* DataManager.swift */,
 				63BD316E1EAB51C300D4D2F8 /* CarData.swift */,
 				63BD31701EAB5B2900D4D2F8 /* CarModel.xcdatamodeld */,
 			);
@@ -228,10 +246,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				632F00A71EC9A81D0080EA91 /* ListaViewController.swift in Sources */,
 				63BD316F1EAB51C300D4D2F8 /* CarData.swift in Sources */,
+				632F00AD1EC9B0F60080EA91 /* VideoViewCell.swift in Sources */,
 				63BD31721EAB5B2900D4D2F8 /* CarModel.xcdatamodeld in Sources */,
+				632F00A91EC9AA870080EA91 /* ListaViewCell.swift in Sources */,
+				632F00AF1EC9B1F90080EA91 /* PlayerViewController.swift in Sources */,
 				63BD315D1EAB4EE400D4D2F8 /* ViewController.swift in Sources */,
+				630575511EBDC9D200932F18 /* DataManager.swift in Sources */,
 				63BD316D1EAB516C00D4D2F8 /* DownloadManager.swift in Sources */,
+				632F00AB1EC9ACAE0080EA91 /* VideoTableViewController.swift in Sources */,
 				63BD315B1EAB4EE400D4D2F8 /* AppDelegate.swift in Sources */,
 				6398A0991EB1ED440036A314 /* BannerDownload.swift in Sources */,
 			);
