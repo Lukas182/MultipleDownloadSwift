@@ -9,13 +9,14 @@
 import UIKit
 import CoreData
 
-class ListaViewController: UITableViewController {
+class ListaViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
     var DatosCars = [CarData]()
-    
+
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
 
         // Cargamos los datos de los coches desde CoreData
         
@@ -26,7 +27,7 @@ class ListaViewController: UITableViewController {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Car")
         
         request.returnsObjectsAsFaults = false
-        
+    
         do
         {
             let results = try context.fetch(request)
@@ -85,6 +86,7 @@ class ListaViewController: UITableViewController {
         {
             
         }
+        
 
         
         
@@ -99,20 +101,34 @@ class ListaViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int
     {
+        /*if let sections = fetchedResultsController.sections {
+            return sections.count
+        }*/
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
+        /*if let sections = fetchedResultsController.sections {
+            let currentSection = sections[section]
+            return currentSection.numberOfObjects
+        }*/
         return DatosCars.count
+        //return 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! ListaViewCell
+
+        /*
+        let c = fetchedResultsController.object(at: indexPath)
+        cell.NombreCar.text = c.nombre
+        */
         
         cell.NombreCar.text = DatosCars[indexPath.row].Nombre
-
+ 
+ 
         return cell
     }
 

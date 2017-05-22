@@ -61,10 +61,16 @@ class DownloadManager: NSObject
                     
                     if(l == 100.0)
                     {
+                        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Noti"), object: nil)
+                        
                         view.fadeOut()
                     }
                     
                 }
+        }
+        else
+        {
+            print("Terminado")
         }
         
     }

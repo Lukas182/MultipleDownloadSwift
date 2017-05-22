@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class VideoTableViewController: UITableViewController
 {
@@ -16,6 +17,50 @@ class VideoTableViewController: UITableViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+    
+        NotificationCenter.default.addObserver(self, selector: #selector(self.Noti), name: NSNotification.Name(rawValue: "Noti") , object: nil)
+       
+    }
+    
+    func Noti()
+    {
+        print("Notificaaaaado")
+        
+        infoCoche.Videos.removeAll()
+        
+        // Cargamos los nuevos videos que aparecen
+    
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let request1 = NSFetchRequest<NSFetchRequestResult>(entityName: "Videos")
+        
+        request1.predicate = NSPredicate.init(format: "id_car == %d", infoCoche.id_Coche)
+        
+        do
+        {
+            
+            let results = try context.fetch(request1)
+            
+            for result in results as! [NSManagedObject]
+            {
+                
+                let video = result.value(forKey: "video_path") as? String
+                
+                infoCoche.AddVideo(str: video!)
+                
+            }
+            
+        }
+        catch
+        {
+            
+        }
+        
+        self.tableView.reloadData()
+        
+        
     }
 
     override func didReceiveMemoryWarning()
